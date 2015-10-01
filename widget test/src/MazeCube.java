@@ -49,9 +49,9 @@ public class MazeCube extends MazeDisplayer {
 //				yAxis = mazeData.getyAxis();
 //				zAxis = mazeData.getzAxis();
 				
-				xAxis = 40;	
-				yAxis = 40;
-				zAxis = 40;
+				xAxis = 15;	
+				yAxis = 15;
+				zAxis = 47;
 				
 				double[] pointA = new double[2];
 				double[] pointB = new double[2];
@@ -125,13 +125,13 @@ public class MazeCube extends MazeDisplayer {
 				event.gc.drawLine((int)(canvasWidth*(pointC[0]/100)), (int)(canvasHeight*(pointC[1]/100)),(int)(canvasWidth*(pointG[0]/100)) ,(int)(canvasHeight*(pointG[1]/100)));
 				event.gc.drawLine((int)(canvasWidth*(pointD[0]/100)), (int)(canvasHeight*(pointD[1]/100)),(int)(canvasWidth*(pointH[0]/100)) ,(int)(canvasHeight*(pointH[1]/100)));
 
-				Image image = new Image(getDisplay(),"resources/locationIcon.png");
-				int imageWidth = image.getBounds().width;
-				int imageHeight = image.getBounds().height;
-				int width = (int) Math.round(getSize().x*0.1);
-				int height = (int) Math.round(getSize().y*0.2);
-				event.gc.drawImage(image,0,0,imageWidth,imageHeight,(int)Math.round(getSize().x*0.5),(int)Math.round(getSize().y*0.5),width,height);
-				
+//				Image image = new Image(getDisplay(),"resources/locationIcon.png");
+//				int imageWidth = image.getBounds().width;
+//				int imageHeight = image.getBounds().height;
+//				int width = (int) Math.round(getSize().x*0.1);
+//				int height = (int) Math.round(getSize().y*0.2);
+//				event.gc.drawImage(image,0,0,imageWidth,imageHeight,(int)Math.round(getSize().x*0.5),(int)Math.round(getSize().y*0.5),width,height);
+//				
 			}
 		});
 	}
