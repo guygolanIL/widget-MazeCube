@@ -38,7 +38,6 @@ public class MazeWindow extends BasicWindow{
 	}
 	
 	
-	
 	public void setPositionData(Position charPosition) {
 		this.charPosition = charPosition;
 		

@@ -2,6 +2,7 @@
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 
@@ -22,9 +23,9 @@ public class MazeCube extends MazeDisplayer {
 	
 	public MazeCube(Composite parent, int style) {
 		super(parent, style);
-		canvasWidth = 500;
-		canvasHeight = 500;
-		mainAngle = 111 ; //default
+		canvasWidth = 970;
+		canvasHeight = 700;
+		mainAngle = 120 ; //default
 		viewAngle = (180 - mainAngle)/2;
 		xAxis = 10;//default
 		yAxis = 10;//default
@@ -39,7 +40,6 @@ public class MazeCube extends MazeDisplayer {
 		
 		setBackground(new Color(null, 255, 255, 255));
 
-		
 		addPaintListener(new PaintListener() {
 			
 			@Override
@@ -49,9 +49,9 @@ public class MazeCube extends MazeDisplayer {
 //				yAxis = mazeData.getyAxis();
 //				zAxis = mazeData.getzAxis();
 				
-				xAxis = 50;	
-				yAxis = 50;
-				zAxis = 50;
+				xAxis = 40;	
+				yAxis = 40;
+				zAxis = 40;
 				
 				double[] pointA = new double[2];
 				double[] pointB = new double[2];
@@ -120,14 +120,17 @@ public class MazeCube extends MazeDisplayer {
 				
 				event.gc.drawPolygon(upperShapeVertices);
 				event.gc.drawPolygon(lowerShapeVertices);
-				//event.gc.drawLine(0, 0, canvasWidth, canvasHeight);
-				
-				//Image image = new Image(getDisplay(),"resources/locationIcon.png");
-//				int imageWidth = image.getBounds().width;
-//				int imageHeight = image.getBounds().height;
-//				int width = (int) Math.round(getSize().x*0.1);
-//				int height = (int) Math.round(getSize().y*0.2);
-				//e.gc.drawImage(image,0,0,imageWidth,imageHeight,(int)Math.round(getSize().x*0.5),(int)Math.round(getSize().y*0.5),width,height);
+				event.gc.drawLine((int)(canvasWidth*(pointA[0]/100)), (int)(canvasHeight*(pointA[1]/100)),(int)(canvasWidth*(pointE[0]/100)) ,(int)(canvasHeight*(pointE[1]/100)));
+				event.gc.drawLine((int)(canvasWidth*(pointB[0]/100)), (int)(canvasHeight*(pointB[1]/100)),(int)(canvasWidth*(pointF[0]/100)) ,(int)(canvasHeight*(pointF[1]/100)));
+				event.gc.drawLine((int)(canvasWidth*(pointC[0]/100)), (int)(canvasHeight*(pointC[1]/100)),(int)(canvasWidth*(pointG[0]/100)) ,(int)(canvasHeight*(pointG[1]/100)));
+				event.gc.drawLine((int)(canvasWidth*(pointD[0]/100)), (int)(canvasHeight*(pointD[1]/100)),(int)(canvasWidth*(pointH[0]/100)) ,(int)(canvasHeight*(pointH[1]/100)));
+
+				Image image = new Image(getDisplay(),"resources/locationIcon.png");
+				int imageWidth = image.getBounds().width;
+				int imageHeight = image.getBounds().height;
+				int width = (int) Math.round(getSize().x*0.1);
+				int height = (int) Math.round(getSize().y*0.2);
+				event.gc.drawImage(image,0,0,imageWidth,imageHeight,(int)Math.round(getSize().x*0.5),(int)Math.round(getSize().y*0.5),width,height);
 				
 			}
 		});
