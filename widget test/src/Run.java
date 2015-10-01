@@ -3,7 +3,7 @@ public class Run {
 
 	public static void main(String[] args) {
 		
-		new MazeWindow("test", 1000, 800).run();
+		new MazeWindow("test", 1000, 1000).run();
 
 	}
 

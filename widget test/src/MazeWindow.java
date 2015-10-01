@@ -1,9 +1,6 @@
 
 
-import java.util.ArrayList;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.KeyListener;
-import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
@@ -32,11 +29,6 @@ public class MazeWindow extends BasicWindow{
 		// cube widget
 		MazeCube mazeCube = new MazeCube(shell, SWT.BORDER);
 		mazeCube.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
-		
-		
-		
-		
-		
 		
 	}
 	
