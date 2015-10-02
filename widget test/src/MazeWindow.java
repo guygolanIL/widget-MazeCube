@@ -24,7 +24,7 @@ public class MazeWindow extends BasicWindow{
 
 	@Override
 	void initWidgets() {
-		shell.setLayout(new GridLayout(2, true));
+		shell.setLayout(new GridLayout(1, true));
 		
 		// cube widget
 		MazeCube mazeCube = new MazeCube(shell, SWT.BORDER);

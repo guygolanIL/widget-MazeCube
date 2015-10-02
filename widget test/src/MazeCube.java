@@ -28,9 +28,9 @@ public class MazeCube extends MazeDisplayer {
 		canvasHeight = this.getSize().y;
 		mainAngle = 120 ; //default
 		viewAngle = (180 - mainAngle)/2;
-		xAxis = 10;//default
-		yAxis = 10;//default
-		zAxis = 10;//default
+		xAxis = 0;//default
+		yAxis = 0;//default
+		zAxis = 0;//default
 		canvasCenter = new int[2];
 		canvasCenter[0] = 50 ;
 		canvasCenter[1] = 50;
@@ -51,9 +51,9 @@ public class MazeCube extends MazeDisplayer {
 //				zAxis = mazeData.getzAxis();
 				
 				
-				xAxis = 21;		//STUB
-				yAxis = 51;
-				zAxis = 13;
+				xAxis = 50;		//STUB
+				yAxis = 50;
+				zAxis = 50;
 				canvasWidth = canvas.getSize().x;
 				canvasHeight = canvas.getSize().y;
 				double[] pointA = new double[2];
