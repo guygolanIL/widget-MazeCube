@@ -25,7 +25,7 @@ public class MazeWindow extends BasicWindow{
 	@Override
 	void initWidgets() {
 		shell.setLayout(new GridLayout(1, true));
-		
+	
 		// cube widget
 		MazeCube mazeCube = new MazeCube(shell, SWT.BORDER);
 		mazeCube.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1));
@@ -48,32 +48,6 @@ public class MazeWindow extends BasicWindow{
 		this.maze = maze;
 		
 	
-	}
-	
-	public void displayError(String string) {
-		Display.getDefault().syncExec(new Runnable() {
-			
-			@Override
-			public void run() {
-				MessageBox errorBox =  new MessageBox(shell, SWT.ICON_ERROR); 
-				errorBox.setMessage(string);
-				errorBox.setText("Error");
-				errorBox.open();				
-			}
-		});
-	}
-	public void display(String string) {
-		Display.getDefault().syncExec(new Runnable() {
-			
-			@Override
-		    public void run() {
-		    	MessageBox messageBox =  new MessageBox(shell, SWT.ICON_INFORMATION); 
-		    	messageBox.setMessage(string);
-		    	messageBox.setText("hi");
-		    	messageBox.open();		
-		    	
-		    }
-		});
 	}
 	
 	
