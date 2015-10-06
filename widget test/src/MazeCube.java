@@ -7,6 +7,8 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 
+import algorithms.mazeGenerators.Position;
+
 public class MazeCube extends MazeDisplayer {
 
 	protected int canvasWidth;
@@ -20,6 +22,7 @@ public class MazeCube extends MazeDisplayer {
 	protected double mainAngle;
 	protected double viewAngle;
 	protected int[] canvasCenter;
+	protected Position playerPosition;
 	protected double[] shapeCenter;
 	protected double[] deflection;
 	protected int[] upperShapeVertices;
@@ -39,6 +42,7 @@ public class MazeCube extends MazeDisplayer {
 		canvasCenter = new int[2];
 		canvasCenter[0] = 50 ;
 		canvasCenter[1] = 50;
+		playerPosition = new Position(charPosition.getX(),charPosition.getY(), charPosition.getZ());
 		shapeCenter = new double[2];
 		deflection= new double[2];
 		upperShapeVertices = new int[8];
@@ -50,7 +54,7 @@ public class MazeCube extends MazeDisplayer {
 			
 			@Override
 			public void paintControl(PaintEvent event) {
-				if(mazeData== null)
+				if(mazeData== null)	// == for debug != for export
 				{
 					System.out.println("MazeCube paintControl");
 					
@@ -58,7 +62,7 @@ public class MazeCube extends MazeDisplayer {
 					//yAxis = mazeData.getyAxis();
 					//zAxis = mazeData.getzAxis();
 					xAxis = 10;		/////STUB
-					yAxis = 17;
+					yAxis = 10;
 					zAxis = 10;
 					int sumAxis = xAxis + yAxis + zAxis;
 					double  ratioMultiplier = 100 / sumAxis;
@@ -119,24 +123,12 @@ public class MazeCube extends MazeDisplayer {
 					
 					upperShapeVertices[0] = (int) (canvasWidth*(pointA[0]/100));
 					upperShapeVertices[1] = (int) (canvasHeight*(pointA[1]/100));
-					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointA[0]/100)), (int) (canvasHeight*(pointA[1]/100)), 5, 5, 5, 5);
-					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[2] = (int) (canvasWidth*(pointB[0]/100));
 					upperShapeVertices[3] = (int) (canvasHeight*(pointB[1]/100));
-					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointB[0]/100)), (int) (canvasHeight*(pointB[1]/100)), 5, 5, 5, 5);
-					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[4] = (int) (canvasWidth*(pointC[0]/100));
 					upperShapeVertices[5] = (int) (canvasHeight*(pointC[1]/100));
-					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointC[0]/100)), (int) (canvasHeight*(pointC[1]/100)), 5, 5, 5, 5);
-					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[6] = (int) (canvasWidth*(pointD[0]/100));
 					upperShapeVertices[7] = (int) (canvasHeight*(pointD[1]/100));
-					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointD[0]/100)), (int) (canvasHeight*(pointD[1]/100)), 5, 5, 5, 5);
-					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					
 					
 					lowerShapeVertices[0] = (int) (canvasWidth*(pointE[0]/100));
@@ -167,8 +159,8 @@ public class MazeCube extends MazeDisplayer {
 					Image image = new Image(getDisplay(),"resources/locationIcon.png");
 					int imageWidth = image.getBounds().width;
 					int imageHeight = image.getBounds().height;
-					int width = (int) Math.round(getSize().x*0.05);
-					int height = (int) Math.round(getSize().y*0.05);
+					int width = (int) Math.round(getSize().x*0.03);
+					int height = (int) Math.round(getSize().y*0.03);
 					event.gc.drawImage(image,0,0,imageWidth,imageHeight,0,0,width,height);
 				}
 			}
