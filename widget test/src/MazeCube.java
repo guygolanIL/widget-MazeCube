@@ -50,16 +50,16 @@ public class MazeCube extends MazeDisplayer {
 			
 			@Override
 			public void paintControl(PaintEvent event) {
-				if(mazeData!= null)
+				if(mazeData== null)
 				{
 					System.out.println("MazeCube paintControl");
 					
 					//xAxis = mazeData.getxAxis();	
 					//yAxis = mazeData.getyAxis();
 					//zAxis = mazeData.getzAxis();
-					xAxis = 23;		/////STUB
-					yAxis = 27;
-					zAxis = 9;
+					xAxis = 10;		/////STUB
+					yAxis = 17;
+					zAxis = 10;
 					int sumAxis = xAxis + yAxis + zAxis;
 					double  ratioMultiplier = 100 / sumAxis;
 					
@@ -119,21 +119,46 @@ public class MazeCube extends MazeDisplayer {
 					
 					upperShapeVertices[0] = (int) (canvasWidth*(pointA[0]/100));
 					upperShapeVertices[1] = (int) (canvasHeight*(pointA[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointA[0]/100)), (int) (canvasHeight*(pointA[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[2] = (int) (canvasWidth*(pointB[0]/100));
 					upperShapeVertices[3] = (int) (canvasHeight*(pointB[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointB[0]/100)), (int) (canvasHeight*(pointB[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[4] = (int) (canvasWidth*(pointC[0]/100));
 					upperShapeVertices[5] = (int) (canvasHeight*(pointC[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointC[0]/100)), (int) (canvasHeight*(pointC[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[6] = (int) (canvasWidth*(pointD[0]/100));
 					upperShapeVertices[7] = (int) (canvasHeight*(pointD[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointD[0]/100)), (int) (canvasHeight*(pointD[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					
 					
 					lowerShapeVertices[0] = (int) (canvasWidth*(pointE[0]/100));
 					lowerShapeVertices[1] = (int) (canvasHeight*(pointE[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointE[0]/100)), (int) (canvasHeight*(pointE[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[2] = (int) (canvasWidth*(pointF[0]/100));
 					lowerShapeVertices[3] = (int) (canvasHeight*(pointF[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointF[0]/100)), (int) (canvasHeight*(pointF[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[4] = (int) (canvasWidth*(pointG[0]/100));
 					lowerShapeVertices[5] = (int) (canvasHeight*(pointG[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointG[0]/100)), (int) (canvasHeight*(pointG[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[6] = (int) (canvasWidth*(pointH[0]/100));
 					lowerShapeVertices[7] = (int) (canvasHeight*(pointH[1]/100));
+					event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointH[0]/100)), (int) (canvasHeight*(pointH[1]/100)), 5, 5, 5, 5);
+					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					
 					event.gc.drawPolygon(upperShapeVertices);
 					event.gc.drawPolygon(lowerShapeVertices);
@@ -145,9 +170,9 @@ public class MazeCube extends MazeDisplayer {
 					Image image = new Image(getDisplay(),"resources/locationIcon.png");
 					int imageWidth = image.getBounds().width;
 					int imageHeight = image.getBounds().height;
-					int width = (int) Math.round(getSize().x*0.1);
-					int height = (int) Math.round(getSize().y*0.2);
-					event.gc.drawImage(image,0,0,imageWidth,imageHeight,(int)Math.round(getSize().x*0.1),(int)Math.round(getSize().y*0.5),width,height);
+					int width = (int) Math.round(getSize().x*0.05);
+					int height = (int) Math.round(getSize().y*0.05);
+					event.gc.drawImage(image,0,0,imageWidth,imageHeight,0,0,width,height);
 				}
 			}
 		});
