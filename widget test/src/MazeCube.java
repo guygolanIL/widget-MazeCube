@@ -80,12 +80,12 @@ public class MazeCube extends MazeDisplayer {
 					
 					pointA[0] = canvasCenter[0];
 					pointA[1] = canvasCenter[1];
-					pointB[0] = canvasCenter[0] + ratiozAxis*Math.sin(viewAngle);
-					pointB[1] = canvasCenter[1] - ratiozAxis*Math.cos(viewAngle);
-					pointC[0] = pointB[0] - ratioyAxis*Math.sin(viewAngle);
-					pointC[1] = pointB[1] - ratioyAxis*Math.cos(viewAngle);
-					pointD[0] = canvasCenter[0] - ratioyAxis*Math.sin(viewAngle);
-					pointD[1] = canvasCenter[1] - ratioyAxis*Math.cos(viewAngle);
+					pointB[0] = canvasCenter[0] + ratioyAxis*Math.sin(viewAngle);
+					pointB[1] = canvasCenter[1] - ratioyAxis*Math.cos(viewAngle);
+					pointC[0] = pointB[0] - ratiozAxis*Math.sin(viewAngle);
+					pointC[1] = pointB[1] - ratiozAxis*Math.cos(viewAngle);
+					pointD[0] = canvasCenter[0] - ratiozAxis*Math.sin(viewAngle);
+					pointD[1] = canvasCenter[1] - ratiozAxis*Math.cos(viewAngle);
 					pointG[0] = pointC[0];
 					pointG[1] = pointC[1] + ratioxAxis;
 					pointE[0] = pointA[0];
@@ -119,46 +119,43 @@ public class MazeCube extends MazeDisplayer {
 					
 					upperShapeVertices[0] = (int) (canvasWidth*(pointA[0]/100));
 					upperShapeVertices[1] = (int) (canvasHeight*(pointA[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointA[0]/100)), (int) (canvasHeight*(pointA[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointA[0]/100)), (int) (canvasHeight*(pointA[1]/100)), 5, 5, 5, 5);
+					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[2] = (int) (canvasWidth*(pointB[0]/100));
 					upperShapeVertices[3] = (int) (canvasHeight*(pointB[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointB[0]/100)), (int) (canvasHeight*(pointB[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointB[0]/100)), (int) (canvasHeight*(pointB[1]/100)), 5, 5, 5, 5);
+					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[4] = (int) (canvasWidth*(pointC[0]/100));
 					upperShapeVertices[5] = (int) (canvasHeight*(pointC[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointC[0]/100)), (int) (canvasHeight*(pointC[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointC[0]/100)), (int) (canvasHeight*(pointC[1]/100)), 5, 5, 5, 5);
+					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					upperShapeVertices[6] = (int) (canvasWidth*(pointD[0]/100));
 					upperShapeVertices[7] = (int) (canvasHeight*(pointD[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointD[0]/100)), (int) (canvasHeight*(pointD[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					//event.gc.setForeground(new Color(getDisplay(),255,0,0));
+					//event.gc.drawRoundRectangle((int) (canvasWidth*(pointD[0]/100)), (int) (canvasHeight*(pointD[1]/100)), 5, 5, 5, 5);
+					//event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					
 					
 					lowerShapeVertices[0] = (int) (canvasWidth*(pointE[0]/100));
 					lowerShapeVertices[1] = (int) (canvasHeight*(pointE[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointE[0]/100)), (int) (canvasHeight*(pointE[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[2] = (int) (canvasWidth*(pointF[0]/100));
 					lowerShapeVertices[3] = (int) (canvasHeight*(pointF[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointF[0]/100)), (int) (canvasHeight*(pointF[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[4] = (int) (canvasWidth*(pointG[0]/100));
 					lowerShapeVertices[5] = (int) (canvasHeight*(pointG[1]/100));
-					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointG[0]/100)), (int) (canvasHeight*(pointG[1]/100)), 5, 5, 5, 5);
-					event.gc.setForeground(new Color(getDisplay(),0,0,0));
 					lowerShapeVertices[6] = (int) (canvasWidth*(pointH[0]/100));
 					lowerShapeVertices[7] = (int) (canvasHeight*(pointH[1]/100));
+					
+					
 					event.gc.setForeground(new Color(getDisplay(),255,0,0));
-					event.gc.drawRoundRectangle((int) (canvasWidth*(pointH[0]/100)), (int) (canvasHeight*(pointH[1]/100)), 5, 5, 5, 5);
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointE[0]/100)-2.5), (int) (canvasHeight*(pointE[1]/100)-2.5), 5, 5, 5, 5);
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointH[0]/100)-2.5), (int) (canvasHeight*(pointH[1]/100)-2.5), 5, 5, 5, 5);
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointG[0]/100)-2.5), (int) (canvasHeight*(pointG[1]/100)-2.5), 5, 5, 5, 5);
+					event.gc.drawRoundRectangle((int) (canvasWidth*(pointF[0]/100)-2.5), (int) (canvasHeight*(pointF[1]/100)-2.5), 5, 5, 5, 5);
 					event.gc.setForeground(new Color(getDisplay(),0,0,0));
+					
 					
 					event.gc.drawPolygon(upperShapeVertices);
 					event.gc.drawPolygon(lowerShapeVertices);
