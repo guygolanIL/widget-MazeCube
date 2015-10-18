@@ -4,7 +4,6 @@ import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 
 import algorithms.mazeGenerators.Position;
@@ -13,6 +12,9 @@ public class MazeCube extends MazeDisplayer {
 
 	protected int canvasWidth;
 	protected int canvasHeight;
+	protected int playerAbsoluteWidth;
+	protected int playerAbsoluteHeight;
+	protected int playerAbsoluteDepth;
 	protected int xAxis;
 	protected int yAxis;
 	protected int zAxis;
@@ -33,6 +35,9 @@ public class MazeCube extends MazeDisplayer {
 		MazeDisplayer canvas= this;
 		canvasWidth = this.getSize().x ;
 		canvasHeight = this.getSize().y;
+		playerAbsoluteHeight = 0;	//
+		playerAbsoluteWidth = 0;	//default playerStarting position (0,0,0)
+		playerAbsoluteDepth = 0;	//
 		mainAngle = 120 ; //default
 		viewAngle = (180 - mainAngle)/2;
 		xAxis = 10;//default
